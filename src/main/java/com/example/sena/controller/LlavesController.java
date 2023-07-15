@@ -30,7 +30,8 @@ import com.example.sena.configuration.exception.EntityAlreadyOnStateException;
 import com.example.sena.model.dto.LlavesDTO;
 import com.example.sena.model.entity.LlavesPrestramo;
 import com.example.sena.model.mapper.LlavesMapper;
-import com.example.sena.service.LlavesService;
+import com.example.sena.service.Impl.LlavesService;
+
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -93,7 +94,7 @@ public class LlavesController {
     }
 
     @PutMapping("/update/{idProducto}")
-    public ResponseEntity<HttpStatus> handleUpdateProducto(@PathVariable UUID idProducto,
+    public ResponseEntity<HttpStatus> handleUpdateProducto(@PathVariable Integer idProducto,
             @RequestBody final LlavesDTO llavesDTO)
             throws EntityNotFoundException, CodigoNotAvaliableException {
         if (!llavesService.alreadyExistById(idProducto)) {
@@ -146,7 +147,7 @@ public class LlavesController {
     }
 
     @DeleteMapping("/delete/{idLlaves}")
-    public ResponseEntity<HttpStatus> handleDeleteProducto(@PathVariable UUID idLlaves) {
+    public ResponseEntity<HttpStatus> handleDeleteProducto(@PathVariable Integer idLlaves) {
         if (!llavesService.alreadyExistById(idLlaves)) {
             throw new EntityNotFoundException(String.format("Producto no encontrado. UUID: %s", idLlaves));
         }

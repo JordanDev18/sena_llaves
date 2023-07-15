@@ -1,4 +1,4 @@
-package com.example.sena.service;
+package com.example.sena.service.Impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,17 +36,17 @@ public class AmbienteService {
         ambientesRepository.save(ambiente);
     }
 
-    public boolean alreadyExistById(UUID idFloor) {
+    public boolean alreadyExistById(Integer idFloor) {
         return ambientesRepository.existsById(idFloor);
     }
 
-    public void deleteProductoById(UUID idFloor) {
+    public void deleteProductoById(Integer idFloor) {
         ambientesRepository.deleteById(idFloor);
     }
 
 
 
-    public Optional<Ambientes> getProductoById(UUID idFloor) {
+    public Optional<Ambientes> getProductoById(Integer idFloor) {
         return ambientesRepository.findById(idFloor);
     }
 

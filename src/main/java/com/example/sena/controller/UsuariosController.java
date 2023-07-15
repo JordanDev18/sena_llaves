@@ -29,7 +29,7 @@ import com.example.sena.model.dto.UsuarioDTO;
 import com.example.sena.model.entity.Usuario;
 import com.example.sena.model.enums.AuthorityEnum;
 import com.example.sena.model.mapper.UsuarioMapper;
-import com.example.sena.service.UsuariosService;
+import com.example.sena.service.Impl.UsuariosService;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;

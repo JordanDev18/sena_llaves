@@ -11,8 +11,10 @@ import com.example.sena.model.entity.LlavesPrestramo;
 import com.example.sena.model.entity.Usuario;
 import com.example.sena.model.enums.AuthorityEnum;
 import com.example.sena.repository.LlavesRepositoy;
-import com.example.sena.service.LlavesService;
-import com.example.sena.service.UsuariosService;
+import com.example.sena.service.Impl.LlavesService;
+import com.example.sena.service.Impl.UsuariosService;
+import java.math.BigInteger;
+
 
 import lombok.RequiredArgsConstructor;
 
@@ -55,36 +57,36 @@ public class ExampleDataInitializer implements CommandLineRunner {
                 LlavesPrestramo.builder()
                 .codigo("ABC123").nombre("Llave 1")
                 .nombre("adso-1")
-                .cantidad(new BigDecimal("15"))
+                .cantidad(new BigInteger("15"))
                 .disponible(true)
                 .build(), 
                 LlavesPrestramo.builder()
                 .codigo("DEF123").nombre("Llave 2")
                 .nombre("fabrica tic")
-                .cantidad(new BigDecimal("10"))
+                .cantidad(new BigInteger("10"))
                 .disponible(true)
                 .build(),
                 LlavesPrestramo.builder()
                 .codigo("GHI123").nombre("Llave 3")
                 .nombre("desarrolo software 2")
-                .cantidad(new BigDecimal("20"))
+                .cantidad(new BigInteger("20"))
                 .disponible(true)
                 .build(),
                 LlavesPrestramo.builder()
                 .codigo("JKL123").nombre("Llave 4")
                 .nombre("innovacion")
-                .cantidad(new BigDecimal("2"))
+                .cantidad(new BigInteger("2"))
                 .disponible(true)
                 .build(),
                 LlavesPrestramo.builder()
                 .codigo("MNO123").nombre("Llave 5")
                 .nombre("proyectos especiales")
-                .cantidad(new BigDecimal("10.5"))
+                .cantidad(new BigInteger("10"))
                 .disponible(true)
                 .build(),
                 LlavesPrestramo.builder()
                 .codigo("PQR123").nombre("Llave 6")
-                .cantidad(new BigDecimal("10.5"))
+                .cantidad(new BigInteger("10"))
                 .nombre("tecno parque")
                 .disponible(true)
                 .build()

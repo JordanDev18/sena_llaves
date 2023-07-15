@@ -1,4 +1,4 @@
-package com.example.sena.service;
+package com.example.sena.service.Impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,12 +40,12 @@ public class LlavesService {
         llavesRepositoy.save(producto);
     }
 
-    public boolean alreadyExistById(UUID idProducto) {
-        return llavesRepositoy.existsById(idProducto);
+    public boolean alreadyExistById(Integer idLlaves) {
+        return llavesRepositoy.existsById(idLlaves);
     }
 
-    public void deleteProductoById(UUID idProducto) {
-        llavesRepositoy.deleteById(idProducto);
+    public void deleteProductoById(Integer idLlaves) {
+        llavesRepositoy.deleteById(idLlaves);
     }
 
     public boolean codigoDisponible(String codigo) {
@@ -57,8 +57,8 @@ public class LlavesService {
         return llavesRepositoy.findFirstByCodigo(codigo);
     }
 
-    public Optional<LlavesPrestramo> getProductoById(UUID idProducto) {
-        return llavesRepositoy.findById(idProducto);
+    public Optional<LlavesPrestramo> getProductoById(Integer idLlaves) {
+        return llavesRepositoy.findById(idLlaves);
     }
 
     public void habilitarProducto(LlavesPrestramo producto) {

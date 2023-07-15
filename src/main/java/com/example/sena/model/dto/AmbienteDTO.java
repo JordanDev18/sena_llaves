@@ -6,7 +6,7 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
+import java.util.Date;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,12 +19,12 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonPropertyOrder({"id","floor","fechaCreacion", "ultimaActualizacion"})
+@JsonPropertyOrder({"id","floor","nombre","fechaCreacion", "ultimaActualizacion"})
 public class AmbienteDTO {
     
     @JsonProperty("id")
     @JsonAlias("idFloor")
-    private UUID id;
+    private Integer id;
 
     @JsonProperty( value = "floor", required = false)
     private Integer floor;
@@ -35,8 +35,8 @@ public class AmbienteDTO {
 
     
     @JsonProperty( value = "fechaCreacion", required = false)
-    private LocalDateTime fechaCreacion;
+    private Date fechaCreacion;
 
     @JsonProperty(value = "ultimaActualizacion", required = false)
-    private LocalDateTime ultimaActualizacion;
+    private Date ultimaActualizacion;
 }

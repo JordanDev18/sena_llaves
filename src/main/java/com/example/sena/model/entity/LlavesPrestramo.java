@@ -1,19 +1,11 @@
 package com.example.sena.model.entity;
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.UUID;
-
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Index;
 import jakarta.persistence.Table;
+import java.math.BigInteger;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,13 +16,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Builder
-@Table(name="llaves", indexes = @Index(name="LLaves_unique", columnList = "codigo", unique = true))
+@Table(name="llaves")
 public class LlavesPrestramo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
-    private UUID id;
+    private Integer id;
 
     @Column(nullable = false, length = 20)
     private String codigo;
@@ -39,16 +31,10 @@ public class LlavesPrestramo {
     private String nombre;
 
     @Column(nullable = false, precision=30, scale=2)
-    private BigDecimal cantidad;
+    private BigInteger cantidad;
 
     @Column(nullable = false)
     private Boolean disponible;
 
-    @CreationTimestamp
-    @Column(updatable = false)
-    private LocalDateTime fechaCreacion;
-
-    @UpdateTimestamp
-    private LocalDateTime ultimaActualizacion;
     
 }

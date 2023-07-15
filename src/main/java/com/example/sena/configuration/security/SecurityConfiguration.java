@@ -63,7 +63,7 @@ public class SecurityConfiguration {
                 .requestMatchers( "api/v1/usuarios/registrar", "api/v1/usuarios/paginate" , "api/v1/usuarios/updated/**").hasRole("ADMINISTRADOR")
                 .requestMatchers( "api/v1/productos/inhabilitar/**", "api/v1/productos/habilitar/**", "api/v1/productos/filtered"
                                     , "api/v1/productos/codigo/**", "api/v1/productos/codigo-disponible", "api/v1/productos/update/**", 
-                                    "api/v1/productos/delete/**", "api/v1/productos/create**", "api/v1/productos/paginate").hasAnyRole("ADMINISTRADOR", "SUPERVISOR")
+                                    "api/v1/productos/delete/**", "api/v1/productos/create**", "api/v1/productos/paginate","api/v1/historicos/list").hasAnyRole("ADMINISTRADOR", "SUPERVISOR")
                 .requestMatchers("api/v1/auth/login").permitAll()
                 .and()
                 .logout()

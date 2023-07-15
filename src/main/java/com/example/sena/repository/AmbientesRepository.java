@@ -13,17 +13,17 @@ import com.example.sena.model.entity.Ambientes;
 import jakarta.transaction.Transactional;
 
 @Repository
-public interface AmbientesRepository extends JpaRepository<Ambientes, UUID> {
+public interface AmbientesRepository extends JpaRepository<Ambientes, Integer> {
    
 
     @Modifying
     @Transactional
     @Query(value="UPDATE ambiente p SET p.disponible = 1 WHERE p.id = :idFloor" , nativeQuery = true)
-    void habilitarProductoById(UUID idFloor);
+    void habilitarProductoById(Integer idFloor);
 
     @Modifying
     @Transactional
     @Query(value="UPDATE ambiente p SET p.disponible = 0 WHERE p.id = :idFloor" , nativeQuery = true)
-    void deshabilitarProductoById(UUID idFloor);
+    void deshabilitarProductoById(Integer idFloor);
     
 }

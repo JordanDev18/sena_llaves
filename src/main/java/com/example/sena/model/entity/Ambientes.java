@@ -1,17 +1,14 @@
 package com.example.sena.model.entity;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,12 +20,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="ambiente", indexes = @Index(name="usuarios_unique", columnList = "email", unique = true))
+@Table(name="ambiente")
 public class Ambientes {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
-    private UUID id;
+    private Integer id;
 
     @Column(length = 8, nullable = false)
    private Integer floor;
@@ -36,9 +33,9 @@ public class Ambientes {
    @Column(length = 267, nullable = false)
    private String nombre;
 
-    @CreationTimestamp
+   @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDateTime;
 
-    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime lastModified;
 }
